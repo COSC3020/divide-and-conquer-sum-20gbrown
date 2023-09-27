@@ -34,14 +34,14 @@ Recurrence relation:
 
        1     if n <= 1  
 T(n){
-       3T(n/3) + n   if n >1
+       3T(n/3)   if n >1
 
-T(n) = 3 * T(n/3) + n
-     = 3(3T(n/9) + n/3) + n
-     = 9T(n/9) + 3n 
-     = 27T(n/27) + 4n 
+T(n) = 3 * T(n/3) 
+     = 3(3T(n/9) + n/3) 
+     = 9T(n/9) 
+     = 27T(n/27) 
      ...
-     =3^i(n/2^i) + in
+     =3^i(n/2^i) 
 for i = lg n
      = nT(1) + nlgn = n+nlgn member of $\Theta$(n log n)
 
