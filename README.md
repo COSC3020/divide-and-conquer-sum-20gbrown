@@ -26,3 +26,33 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+## Runtime analysis: Answer
+
+In each recursive call, the array is divided into 3 parts, a.slice(0,mid1), a.slice(mid1,mid2), and a.slice(mid2).
+Recurrence relation:
+
+T(n){
+
+1     if n <= 1 
+
+3T(n/3) + 1   if n >1
+
+T(n) = 3 * T(n/3) + 1
+
+ = 3(3T(n/9 + 1) + 1) 
+     
+ = 9T(n/9) + 3 + 1
+ 
+ = 27T(n/27 + 1) + 3 + 1 
+ 
+ ...
+ 
+=3^i(n/3^log_3n) + log_3n 
+
+for i = log n
+
+= nT(1) + log_3n member of $\Theta$(n)
+
+So the runtime of the divide and conquer algorithm is $\Theta$(n)
+
